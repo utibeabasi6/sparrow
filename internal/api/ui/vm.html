@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>sparrow</title>
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <script src="/js/theme.js"></script>
+    <script type="module" src="/js/vm.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a class="wordmark" href="/">sparrow</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <span class="theme-light-label">Light</span>
+          <span class="theme-dark-label">Dark</span>
+        </button>
+      </div>
+    </header>
+    <main class="container">
+      <div class="bar">
+        <div class="page-head">
+          <h1 class="mono"><span id="name"></span> <span id="state"></span></h1>
+          <p class="wire" id="wire"></p>
+          <p class="meta" id="meta"></p>
+        </div>
+        <div class="actions">
+          <code id="ssh"></code>
+          <button class="danger" type="button" id="delete">Delete</button>
+        </div>
+      </div>
+      <p class="error" id="error" hidden></p>
+      <pre class="console" id="console"></pre>
+    </main>
+  </body>
+</html>

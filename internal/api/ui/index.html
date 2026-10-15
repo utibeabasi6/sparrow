@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>sparrow</title>
+    <link rel="stylesheet" href="/css/tokens.css" />
+    <link rel="stylesheet" href="/css/app.css" />
+    <script src="/js/theme.js"></script>
+    <script type="module" src="/js/index.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a class="wordmark" href="/">sparrow</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>
+          <span class="theme-light-label">Light</span>
+          <span class="theme-dark-label">Dark</span>
+        </button>
+      </div>
+    </header>
+    <main class="container">
+      <div class="bar">
+        <h1>Virtual machines</h1>
+        <form id="create">
+          <label>
+            Rootfs
+            <select name="rootfs" id="rootfs"></select>
+          </label>
+          <label>
+            vCPUs
+            <input name="vcpus" type="number" min="1" max="32" value="1" />
+          </label>
+          <label>
+            Memory
+            <select name="memory_mib">
+              <option value="128">128 MiB</option>
+              <option value="256">256 MiB</option>
+              <option value="512" selected>512 MiB</option>
+              <option value="1024">1 GiB</option>
+              <option value="2048">2 GiB</option>
+            </select>
+          </label>
+          <button type="submit">Boot VM</button>
+        </form>
+      </div>
+      <p class="error" id="error" hidden></p>
+      <div id="vms"></div>
+    </main>
+  </body>
+</html>

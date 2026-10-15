@@ -1,0 +1,6 @@
+{
+  "kernel": "assets/vmlinux",
+  "rootfs": {
+    "claude": "assets/rootfs/claude.ext4"
+  }
+}

@@ -1,0 +1,198 @@
+/* Tokens from the Unikraft Design System. Keep in sync with it rather than editing here. */
+
+:root {
+  /* ---- Brand blue. One blue, used sparingly and always for meaning. ---- */
+  --blue-50:  #f4f7ff;
+  --blue-100: #e8eeff;
+  --blue-200: #c9d9ff;
+  --blue-300: #9dbaff;
+  --blue-500: #2e6bff;
+  --blue-600: #1b5cff;  /* the brand blue */
+  --blue-700: #1247d6;
+  --blue-800: #0e38a8;
+
+  /* ---- Ink. Cool, slightly navy neutrals — never pure black for text. ---- */
+  --ink-900: #0d1526;
+  --ink-800: #16213a;
+  --ink-700: #33415c;
+  --ink-600: #475467;
+  --ink-500: #667085;
+  --ink-400: #98a2b3;
+  --ink-300: #c4cbd8;
+
+  /* ---- Paper. ---- */
+  --white:   #ffffff;
+  --paper:   #fcfcfd;  /* page background, matches site theme-color */
+  --paper-2: #f7f8fb;  /* sunken panels, code wells */
+
+  /* ---- Hairlines. ---- */
+  --line-strong: #d9dee7;
+  --line:        #e6e9ef;
+  --line-soft:   #eff1f5;
+
+  /* ---- Terminal / dark surface. ---- */
+  --terminal-bg:     #08090b;
+  --terminal-fg:     #c9d1d9;
+  --terminal-dim:    #6e7681;
+  --terminal-green:  #4ade80;
+  --dot-red:    #ff5f57;
+  --dot-yellow: #febc2e;
+  --dot-green:  #28c840;
+
+  /* ---- Semantic aliases. Prefer these in components. ---- */
+  --brand:         var(--blue-600);
+  --brand-hover:   var(--blue-700);
+  --brand-press:   var(--blue-800);
+  --brand-tint:    var(--blue-100);
+  --brand-tint-faint: var(--blue-50);
+  --brand-border:  var(--blue-200);
+
+  --text-strong:   var(--ink-900);
+  --text-body:     var(--ink-700);
+  --text-muted:    var(--ink-500);
+  --text-faint:    var(--ink-400);
+  --text-brand:    var(--blue-600);
+  --text-on-brand: var(--white);
+  --text-on-ink:   #e8ebf2;
+
+  --surface-page:       var(--paper);
+  --surface-card:       var(--white);
+  --surface-sunken:     var(--paper-2);
+  --surface-brand:      var(--blue-600);
+  --surface-brand-tint: var(--blue-50);
+  --surface-ink:        var(--ink-900);
+  --surface-terminal:   var(--terminal-bg);
+
+  --border-card:  var(--line);
+  --border-hair:  var(--line-soft);
+  --border-brand: var(--brand-border);
+  --focus-ring:   color-mix(in oklab, var(--blue-600) 35%, transparent);
+}
+
+:root {
+  /* Families. Inter for everything human; mono for labels, metadata and code. */
+  /* Display = InterVariable with tightened tracking (--tracking-display).
+     If the Inter Display optical size is ever supplied, add its @font-face and
+     put "Inter Display" back at the front of this stack. */
+  --font-display: "InterVariable", "Inter", system-ui, sans-serif;
+  --font-sans:    "InterVariable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Size scale. */
+  --text-2xs: 11px;
+  --text-xs:  12px;
+  --text-sm:  14px;
+  --text-md:  16px;
+  --text-lg:  18px;
+  --text-xl:  21px;
+  --text-2xl: 26px;
+  --text-3xl: 32px;
+  --text-4xl: 40px;
+  --text-5xl: 52px;
+  --text-6xl: 68px;
+  --text-7xl: 88px;
+  --text-8xl: 112px;
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.02;  /* display headlines */
+  --leading-snug:    1.14;  /* large headings */
+  --leading-normal:  1.35;  /* subheads */
+  --leading-relaxed: 1.6;   /* body copy */
+
+  --tracking-display: -0.035em; /* stands in for Inter Display's optical size */
+  --tracking-heading: -0.02em;
+  --tracking-body:     0em;
+  --tracking-mono:     0.02em;
+  --tracking-label:    0.12em;  /* uppercase mono eyebrows */
+
+  /* Semantic roles. */
+  --type-hero:     var(--weight-bold) var(--text-7xl)/var(--leading-tight) var(--font-display);
+  --type-h1:       var(--weight-bold) var(--text-5xl)/var(--leading-snug) var(--font-display);
+  --type-h2:       var(--weight-bold) var(--text-3xl)/var(--leading-snug) var(--font-display);
+  --type-h3:       var(--weight-semibold) var(--text-xl)/var(--leading-normal) var(--font-sans);
+  --type-lead:     var(--weight-regular) var(--text-lg)/var(--leading-relaxed) var(--font-sans);
+  --type-body:     var(--weight-regular) var(--text-md)/var(--leading-relaxed) var(--font-sans);
+  --type-small:    var(--weight-regular) var(--text-sm)/var(--leading-normal) var(--font-sans);
+  --type-eyebrow:  var(--weight-medium) var(--text-xs)/1.2 var(--font-mono);
+  --type-meta:     var(--weight-regular) var(--text-sm)/1.4 var(--font-mono);
+  --type-code:     var(--weight-regular) var(--text-sm)/1.7 var(--font-mono);
+  --type-stat:     var(--weight-bold) var(--text-6xl)/1 var(--font-display);
+}
+
+:root {
+  /* 4px base, doubling at the top end. */
+  --space-0:  0px;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Radii. Softened corners, not pills — chips and status dots stay round. */
+  --radius-xs:   2px;
+  --radius-sm:   3px;
+  --radius-md:   5px;
+  --radius-lg:   7px;
+  --radius-xl:   9px;
+  --radius-2xl:  11px;
+  --radius-pill: 999px;
+
+  --border-width: 1px;
+
+  /* Layout. */
+  --container-max: 1280px;
+  --measure-prose: 68ch;  /* blog body column */
+  --gutter-page:   var(--space-10);
+
+  /* Social canvas sizes. Export at 2x. */
+  --canvas-linkedin: 1200px 627px; /* @kind other */
+  --canvas-x:        1600px 900px; /* @kind other */
+  --canvas-square:   1080px 1080px; /* @kind other */
+  --canvas-og:       1200px 630px; /* @kind other */
+  --canvas-pad:      72px;   /* safe padding on 1200-wide canvases */
+  --canvas-pad-lg:   88px;   /* 1600/1080-square canvases */
+}
+
+:root {
+  /* Shadows. Almost none. Cards are defined by hairlines, not elevation. */
+  --shadow-none:  none;
+  --shadow-hair:  0 1px 2px rgba(13, 21, 38, 0.04);
+  --shadow-card:  0 1px 3px rgba(13, 21, 38, 0.05), 0 8px 24px -12px rgba(13, 21, 38, 0.08);
+  --shadow-brand: 0 2px 12px rgba(27, 92, 255, 0.28);
+  --shadow-pop:   0 12px 40px -12px rgba(13, 21, 38, 0.18);
+
+  /* Motion. Short, flat, no bounce. */
+  --ease-out:  cubic-bezier(0.22, 0.61, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast:  120ms; /* @kind other */
+  --dur-base:  180ms; /* @kind other */
+  --dur-slow:  320ms; /* @kind other */
+  --transition-base: all var(--dur-base) var(--ease-out);
+
+  /* The checkerboard. Rare accent: highlighted cards, hero corners, nothing else.
+     Apply as background-image and always fade it with --checker-mask. */
+  --checker-size: 8px;
+  --checker-ink:  rgba(13, 21, 38, 0.045);
+  --checker-blue: rgba(27, 92, 255, 0.07);
+  --checker: repeating-conic-gradient(var(--checker-ink) 0% 25%, transparent 0% 50%)
+             0 0 / var(--checker-size) var(--checker-size);
+  --checker-brand: repeating-conic-gradient(var(--checker-blue) 0% 25%, transparent 0% 50%)
+             0 0 / var(--checker-size) var(--checker-size);
+  --checker-mask: linear-gradient(to bottom left, #000 0%, rgba(0,0,0,0.35) 35%, transparent 70%); /* @kind other */
+
+  /* Dotted leader used in the blog index rows. */
+  --leader: radial-gradient(circle at 1px 50%, var(--ink-300) 1px, transparent 1px) 0 50% / 6px 100% repeat-x;
+}
+
